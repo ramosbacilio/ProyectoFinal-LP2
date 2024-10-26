@@ -1,0 +1,116 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Register</title>
+
+    <style>
+        .gradient-custom {
+            background: linear-gradient(to right, #4b4b4b, #2c2c2c);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/Register}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-light text-dark" style="border-radius: 1rem;">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold mb-2 text-uppercase text-center">Registro</h2>
+                        <p class="text-muted mb-5 text-center">Completa los campos para registrarte</p>
+
+                        <form th:action="@{/Register}" th:object="${usuario}" method="post">
+                            <input type="hidden" name="rol" value="2">
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="nomUsua" class="form-control form-control-lg" 
+                                       th:field="*{nomUsua}" placeholder="Nombre" required />
+                                <label class="form-label" for="nomUsua">Nombre</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="apeUsua" class="form-control form-control-lg" 
+                                       th:field="*{apeUsua}" placeholder="Apellido" required />
+                                <label class="form-label" for="apeUsua">Apellido</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="date" id="fnaUsua" class="form-control form-control-lg" 
+                                       th:field="*{fnaUsua}" required />
+                                <label class="form-label" for="fnaUsua">Fecha de Nacimiento</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="userUsua" class="form-control form-control-lg" 
+                                       th:field="*{userUsua}" placeholder="Usuario" required />
+                                <label class="form-label" for="userUsua">Usuario</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" id="claUsua" class="form-control form-control-lg" 
+                                       th:field="*{claUsua}" placeholder="Contraseña" required />
+                                <label class="form-label" for="claUsua">Contraseña</label>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="remember" name="remember" />
+                                <label class="form-check-label" for="remember">
+                                    Recordarme
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark btn-lg w-100">Registrarse</button>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <p class="mb-0">¿Ya tienes cuenta? 
+                                <a href="#!" class="fw-bold text-dark">Inicia sesión</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

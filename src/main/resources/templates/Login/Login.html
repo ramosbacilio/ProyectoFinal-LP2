@@ -1,0 +1,104 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Login</title>
+
+    <style>
+        .gradient-custom {  /* Modificado */
+            background: linear-gradient(to right, #4b4b4b, #2c2c2c); /* Degradado gris sobrio */
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;"> <!-- Modificado -->
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/Register}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="vh-100 gradient-custom"> <!-- Modificado -->
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-light text-dark" style="border-radius: 1rem;"> <!-- Modificado -->
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold mb-2 text-uppercase text-center">Login</h2>
+                        <p class="text-muted mb-5 text-center">Ingresa tus credenciales para acceder</p>
+
+                        <form th:action="@{/}" method="post"> <!-- Modificado -->
+                            <div class="form-group mb-4">
+                                <label for="user" class="form-label">Usuario</label> <!-- Modificado -->
+                                <input type="text" id="user" name="user" 
+                                       class="form-control form-control-lg" placeholder="Usuario" required autofocus />
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="password" class="form-label">Contraseña</label> <!-- Modificado -->
+                                <input type="password" id="password" name="password" 
+                                       class="form-control form-control-lg" placeholder="Contraseña" required />
+                            </div>
+
+                            <div class="form-group form-check mb-4"> <!-- Checkbox original -->
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember" />
+                                <label class="form-check-label" for="remember">Recordarme</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark btn-lg w-100 mb-4">Acceder</button> <!-- Modificado -->
+
+                            <div class="text-center">
+                                <a href="#!" class="text-dark">¿Olvidaste tu contraseña?</a> <!-- Modificado -->
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#!" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a> <!-- Modificado -->
+                                <a href="#!" class="text-dark mx-2"><i class="fab fa-twitter"></i></a> <!-- Modificado -->
+                                <a href="#!" class="text-dark mx-2"><i class="fab fa-google"></i></a> <!-- Modificado -->
+                            </div>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <p class="mb-0">¿No tienes una cuenta? 
+                                <a href="@{/Register}" class="fw-bold text-dark">Regístrate</a> <!-- Modificado -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
